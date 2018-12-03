@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript">
+	function requestVerification(reqUrl) {
+		$.ajax({
+		    type : "get"
+		    , url : reqUrl
+		    , accept : "application/json"
+		    , error : function(jqXHR, textStatus, errorThrown) {
+		    	alert(textStatus);
+		    }
+		    , success : function(response, textStatus, jqXHR){
+		    	if(jqXHR.status == 200 || jqXHR.status == 204) {
+		    		alert("success");
+		    	} else {
+		    		alert("[" + response.id + "] " + response.description);
+		    	}
+		    }
+		});
+	}
+</script>
+</head>
+<body>
+	<a href="javascript:requestVerification('http://211.115.67.10/core/users/v1/ns/email?seq=394&token=0d0a5f87f32743aa887a042ff251b6db');">test</a>
+</body>
+</html>

@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" );
+
+/* base */
+body,html{height:100%;}
+body {font:16px "Open Sans", "sans-serif"; -webkit-text-size-adjust:none;}
+body, div, dl, dt, dd, th, td, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, p, blockquote, button, input, textarea{margin:0; padding:0;}
+article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, main {display:block; margin:0; padding:0;}
+hr, table caption, legend, .hd-element{font-size:0; position:absolute; top:-999999px;visibility:hidden;}
+table {border-spacing:0;border-collapse:collapse;border:0;}
+img, fieldset, button, input{border:0; vertical-align:middle;}
+ul, ol, li {list-style:none;}
+em, address {font-style:normal;}
+label, button {cursor:pointer;}
+a {text-decoration:none;}
+a:hover {text-decoration:none;}
+button {vertical-align:top; background:transparent;}
+button::-moz-focus-inner {padding:0; border:0;}
+h1, h2, h3, h4, h5, h6 {font-size:1em;font-weight:normal;}
+input[type=text] {-webkit-appearance: none;-webkit-border-radius:0;}

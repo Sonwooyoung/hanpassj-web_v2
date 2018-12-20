@@ -10,9 +10,8 @@ import java.util.*;
 public class DateUtil {
 
 	public List<Map> daylists(){
-		List<Map> dayList = new ArrayList<Map>();
+		List<Map> dayList = new ArrayList<>();
 		LocalDateTime now = LocalDateTime.now(); // 현재시간
-		now.getDayOfMonth();
 		for(int i=0; i < 9; i++){
 			HashMap<String,String> daylists = new HashMap<>();
 			LocalDateTime plusDay = now.plusDays(2+i);
@@ -24,7 +23,7 @@ public class DateUtil {
 	}
 
 	public List<Map> timeLists(){
-		List<Map> timeList = new ArrayList<Map>();
+		List<Map> timeList = new ArrayList<>();
 		for(int i=6; i <23; i++){
 			for(int j=0; j < 3; j++){
 				HashMap<String,String> timeLists = new HashMap<>();

@@ -191,8 +191,7 @@ function afterRenderAddEvent() {
 		var remittanceOption = $('#selected_option').val(); // 송금옵션
 		var baseMoneyAmount = $('#'.concat(user_input_base)).val(); // 사용자가 입력한 금액
 			console.log('0',user_input_currency,'  1', selectedCountryCode, '  2',selectedCurr, '   3',resultStyle, '   4',remittanceOption,'   5',baseMoneyAmount)
-		console.log(resultStyle + "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-		$('.flag-large').eq(1).attr("class", resultStyle) // 국기 세팅 
+		$('.flag-large').eq(1).attr("class", resultStyle) // 국기 세팅
 		$('.flag-btn-txt').eq(1).text(selectedCurr) // 통화 세팅
 		$('#selected_reci_country_code').val(selectedCountryCode)
 		
@@ -269,12 +268,13 @@ var remittanceCodePairs = {
 	id: { CASH_PICK_UP: { provider_code: "FINNET", mto_service_center_code: "FNCP-0001" }, BANK_TRANSFER: { provider_code: "FINNET", mto_service_center_code: "FNBT-0001" } },
 	np: { CASH_PICK_UP: { provider_code: "EASYLINK", mto_service_center_code: "ELCP-0001" }, BANK_TRANSFER: { provider_code: "EASYLINK", mto_service_center_code: "ELBT-0003" } },
 	kh: { CASH_PICK_UP: { provider_code: "WING", mto_service_center_code: "WGCP-0001" }, BANK_TRANSFER: { provider_code: "Wing", mto_service_center_code: "WGBT-0001" } },
-	vn: { CASH_PICK_UP: { provider_code: "DONGA", mto_service_center_code: "LBCP-0001" }, BANK_TRANSFER: { provider_code: "TRANSFERTO", mto_service_center_code: "TTBT-0001" } },
+	vn: { CASH_PICK_UP: { provider_code: "DONGA", mto_service_center_code: "DACP-0001" }, BANK_TRANSFER: { provider_code: "DONGA", mto_service_center_code: "DABT-0001" } },
 	cn: { CASH_PICK_UP: { provider_code: "DONGA", mto_service_center_code: "LBCP-0001" }, BANK_TRANSFER: { provider_code: "TRANSFERTO", mto_service_center_code: "TTBT-0001" } },
 	th: { CASH_PICK_UP: { provider_code: "DONGA", mto_service_center_code: "LBCP-0001" }, BANK_TRANSFER: { provider_code: "TRANSFERTO", mto_service_center_code: "TTBT-0001" } },
 	lk: { CASH_PICK_UP: { provider_code: "TRANSFERTO", mto_service_center_code: "TTMW-0057" }, BANK_TRANSFER: { provider_code: "TRANSFERTO", mto_service_center_code: "TTBT-0045" } },
-	bd: { CASH_PICK_UP: { provider_code: "EXPRESS", mto_service_center_code: "TTCP-0400" }, BANK_TRANSFER: { provider_code: "EXPRESS", mto_service_center_code: "TTBT-0370" } },
-	pk: { CASH_PICK_UP: { provider_code: "EXPRESS", mto_service_center_code: "EMCP-0061" }, BANK_TRANSFER: { provider_code: "EXPRESS", mto_service_center_code: "EMBT-0071" } }
+	bd: { CASH_PICK_UP: { provider_code: "XPRESS", mto_service_center_code: "EMCP-0041" }, BANK_TRANSFER: { provider_code: "XPRESS", mto_service_center_code: "TTBT-0370" } },
+	pk: { CASH_PICK_UP: { provider_code: "XPRESS", mto_service_center_code: "EMCP-0061" }, BANK_TRANSFER: { provider_code: "XPRESS", mto_service_center_code: "EMBT-0071" } },
+	mm: { BANK_TRANSFER: { provider_code: "TRANSFERTO", mto_service_center_code: "TTBT-0401" } }
 }
 // 사용자 입력값과 지정한 통화로 실제 송금되는 금액을 계산한다.
 var requestAllow = true;

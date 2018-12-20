@@ -6,7 +6,7 @@
 <title>한패스(주)-해외송금</title>
 <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<link rel="icon" href="static/images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/static/images/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="static/css/base.css">
 <link rel="stylesheet" href="static/css/contents.css">
 <link rel="stylesheet" href="static/css/plugin/ionicons-2.0.1/css/ionicons.min.css" >

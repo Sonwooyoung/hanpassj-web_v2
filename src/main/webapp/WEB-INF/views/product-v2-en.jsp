@@ -10,8 +10,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta id="_csrf" name="_csrf" th:content="${_csrf.token}"/>
 <meta id="_csrf_header" name="_csrf_header" th:content="${_csrf.headerName}"/>
-<link href="static/images/favicon.ico?" rel="icon" type="image/x-icon" />
-<link rel="shortcut icon" href="static/images/favicon.ico?" type="image/x-icon" />
+<link href="/static/images/favicon.ico?" rel="icon" type="image/x-icon">
 <link rel="stylesheet" href="static/css/base-en.css">
 <link rel="stylesheet" href="static/css/contents.css">
 <link rel="stylesheet" href="static/css/owl.carousel.min.css">

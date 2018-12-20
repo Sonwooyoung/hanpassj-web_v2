@@ -7,7 +7,7 @@
 	<title>한패스</title>
 	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<link href="static/images/favicon.ico?" rel="icon" type="image/x-icon">
+	<link href="/static/images/favicon.ico?" rel="icon" type="image/x-icon">
 	<link rel="stylesheet" href="static/css/base.css">
 	<link rel="stylesheet" href="static/css/contents.css">
 	<link rel="stylesheet" href="static/css/animate.css">
@@ -182,13 +182,6 @@
 		<div class="exchange-wrap">
 			<div class="ex-slide-contents">
 				<div class="ex-inner">
-					<p class="world">
-						<span>With</span>
-						<picture>
-							<source media="(max-width:700px)" srcset="static/images/exchange/mobile-worldroaming@2x.png">
-							<img src="static/images/exchange/worldroaming@2x.png" alt="worldroaming">
-						</picture>
-					</p>
 					<p class="ex-title-small">공항에서 한 번에 패스!</p>
 					<p class="ex-title-large">한패스 환전</p>
 					<p class="ex-text-infor">
@@ -260,16 +253,16 @@
 						<div class="ex-calculator-area">
 							<div class="ex-calculator-inner">
 								<div class="ex-place-wrap">
-									<div class="ex-place">
+									<%--<div class="ex-place">
 										<h3>수령 장소</h3>
 										<div class="select-box-wrap">
 											<span class="select-ico loc"></span>
 											<input type="text" name="initplace" value="인천공항 제 1터미널" class="popup-btn">
 											<!--calculator popup -->
-											<div class="calculator-popup data">
+											&lt;%&ndash;<div class="calculator-popup data">
 												<p class="calculator-title">수령 장소</p>
 												<ul class="place auto" id="receiptPlaceInfoList">
-													<%--<li>
+													&lt;%&ndash;<li>
 														<a href="#"><span class="calculator-list-txt">인천공항 제 1 터미널</span></a>
 													</li>
 													<li>
@@ -286,12 +279,12 @@
 													</li>
 													<li>
 														<a href="#"><span class="calculator-list-txt">김포공항</span></a>
-													</li>--%>
+													</li>&ndash;%&gt;
 												</ul>
-											</div><!--calculator popup -->
+											</div><!--calculator popup -->&ndash;%&gt;
 										</div>
-									</div>
-									<div class="ex-day">
+									</div>--%>
+									<%--<div class="ex-day">
 										<h3>수령 날짜</h3>
 										<div class="select-box-wrap">
 											<span class="select-ico sch"></span>
@@ -299,38 +292,38 @@
 												<input type="text" id="day" name="day" value="<c:out value="${item.day}" />" class="popup-btn ns-en">
 												<input type="text" id="dayoftheweek" name="dayoftheweek" class="input-day" value="<c:out value="${item.dayoftheweek}" />" disabled="disabled">
 											</c:forEach>
-											<%--<input type="text" id="" name="" value="2018 / 06 / 20" class="popup-btn ns-en">
-											<input type="text" id="" name="" class="input-day" value="목" disabled="disabled">--%>
+											&lt;%&ndash;<input type="text" id="" name="" value="2018 / 06 / 20" class="popup-btn ns-en">
+											<input type="text" id="" name="" class="input-day" value="목" disabled="disabled">&ndash;%&gt;
 											<!--calculator popup -->
 											<div class="calculator-popup data">
 												<p class="calculator-title">수령 날짜</p>
-												<%--<c:out value="${dateTimeFormat.dayList}"/>--%>
+												&lt;%&ndash;<c:out value="${dateTimeFormat.dayList}"/>&ndash;%&gt;
 												<ul class="place receipt">
 													<c:forEach var="item" items="${dayList}" >
 														<li>
 															<a href="#"><span class="calculator-list-txt ns-en">${item.day}</span><span class="left-text pos-right">${item.dayoftheweek}</span></a>
 														</li>
 													</c:forEach>
-													<%--<li>
+													&lt;%&ndash;<li>
 														<a href="#"><span class="calculator-list-txt ns-en">2018 / 06 / 20</span><span class="left-text pos-right">수</span></a>
-													</li>--%>
+													</li>&ndash;%&gt;
 												</ul>
 											</div><!--calculator popup -->
 										</div>
-									</div>
+									</div>--%>
 								</div>
 								<button type="button" id="exchangeRequest">환전 신청하기</button>
 							</div>
 						</div><!--// 장소/날짜 -->
-						<ul class="slide-dot-lst">
+						<%--<ul class="slide-dot-lst">
 							<li></li>
 							<li></li>
 							<li></li>
 							<li></li>
-							<%--<li></li>--%>
-						</ul>
+							&lt;%&ndash;<li></li>&ndash;%&gt;
+						</ul>--%>
 						<!-- ex-number-->
-						<div class="ex-number">
+						<%--<div class="ex-number">
 							<div class="ns-en">
 								<span class="ex-number-ico usd"></span><span class="ex-number-name">USD</span><span class="ex-number-text"><c:out value="${rateList.USD}"/></span>
 							</div>
@@ -343,10 +336,10 @@
 							<div class="ns-en">
 								<span class="ex-number-ico eur"></span><span class="ex-number-name">EUR</span><span class="ex-number-text"><c:out value="${rateList.EUR}"/></span>
 							</div>
-							<%--<div class="ns-en">
+							&lt;%&ndash;<div class="ns-en">
 								<span class="ex-number-ico gbp"></span><span class="ex-number-name">GBP</span><span class="ex-number-text"><c:out value="${rateList.GBP}"/></span>
-							</div>--%>
-						</div>
+							</div>&ndash;%&gt;
+						</div>--%>
 						<!--// ex-number -->
 					</div>
 					<!--// 환율계산 -->
@@ -414,7 +407,7 @@
 											</div><!--calculator popup -->
 										</div>
 										<div class="input-box-other withoutdash">
-											<input type="text" id="idnumber" name="idnumber" placeholder="신분증상 번호 ‘-’ 없이 입력">
+											<input type="text" id="idnumber" name="idnumber" placeholder="신분증상 번호 ‘-’ 없이 입력" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')">
 										</div>
 									</div>
 									<p class="input-infor">* 수령 시 <span>신분증을 통한 본인확인이 필요</span>하므로 정보를 정확히 입력해주시기 바랍니다.</p>
@@ -425,12 +418,12 @@
 									<div class="tel-element">
 										<div class="row-two">
 											<div class="row-two-inner withoutdash">
-												<input type="text" id="tel1" name="tel1" placeholder="휴대폰 번호 ‘-’ 없이 입력">
+												<input type="text" id="tel1" name="tel1" placeholder="휴대폰 번호 ‘-’ 없이 입력" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')">
 											</div>
 										</div>
 										<div class="row-two">
 											<div class="row-two-inner phone-number">
-												<input type="text" id="telCert" name="telCert" placeholder="인증번호 입력">
+												<input type="text" id="telCert" name="telCert" placeholder="인증번호 입력" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')">
 												<p class="time-text" id="timer_s">03:00</p>
 												<button type="button" id="telCertRequest">인증번호 받기</button>
 											</div>
@@ -438,11 +431,11 @@
 									</div>
 								</div>
 								<p class="input-infor">* 신청자의 정보가 불일치할 경우, <span>메시지 수신 및 외화수령이 불가</span>할 수 있습니다.</p>
-								<div class="input-box">
+								<%--<div class="input-box">
 									<label for="email">이메일<em>*</em></label>
 									<p class="warning-text">이메일 을 입력해주세요.</p>
 									<input type="text" id="email" name="" placeholder="이메일 형식으로 입력">
-								</div>
+								</div>--%>
 							</form>
 						</fieldset>
 						<h4>한패스 환전 이용약관 및 유의사항 확인</h4>
@@ -451,7 +444,7 @@
 							<p class="terms-more-btn">
 								<a href="#note_popup" class="popup-open-btn">자세히 보기</a>
 							</p>
-							<div class="terms-detail">
+							<%--<div class="terms-detail">
 								<dl>
 									<dt><span class="n1"></span>수령가능시간</dt>
 									<dd>06:00 - 23:00, 수령 약속 시간 준수</dd>
@@ -468,7 +461,7 @@
 									<dt><span class="n4"></span>환불요청</dt>
 									<dd>예약조회 화면에서 확인 후 환불요청 (‘자세히보기’에서 환불수수료 규정 참고)</dd>
 								</dl>
-							</div>
+							</div>--%>
 						</div>
 						<div class="terms-area">
 							<h5>한패스 환전서비스 이용 약관</h5>
@@ -571,12 +564,12 @@
 									<!-- <button type="button" class="secondary">사용안함</button> -->
 								</p>
 							</div><!--// 프로모션 -->
-							<div class="result-wrap bg-color-gray first">
+							<%--<div class="result-wrap bg-color-gray first">
 								<dl>
 									<dt>배달 수수료</dt>
 									<dd>0 원(배타서비스 무료 이벤트중)</dd>
 								</dl>
-							</div>
+							</div>--%>
 							<div class="result-wrap bg-color-gray">
 								<dl class="bold">
 									<dt>공항대비 절약금액</dt>
@@ -622,7 +615,7 @@
 												</ul>
 											</div><!--calculator popup -->
 										</div>
-										<div class="column-input-box">
+										<%--<div class="column-input-box">
 											<input type="text" id="detail_place" name="detail_place" class="popup-btn" placeholder="상세 장소를 선택해주세요.">
 											<span class="column-arrow"></span>
 											<!--calculator popup -->
@@ -630,51 +623,56 @@
 												<p class="calculator-title">상세 장소</p>
 												<input type="hidden" id="receiptDetailPlaceId"/>
 												<ul class="place" id="detailplaceList">
-													<%--<li><a href="#"><span class="calculator-list-txt">지하 1층 입국장 8번 게이트 앞</span></a></li>--%>
+													&lt;%&ndash;<li><a href="#"><span class="calculator-list-txt">지하 1층 입국장 8번 게이트 앞</span></a></li>&ndash;%&gt;
 												</ul>
 											</div><!--calculator popup -->
-										</div>
-										<p class="input-infor pos">* 수령장소 근처에서 기다리시면 <span>한패스세터(직원)</span>와 만날수 있습니다. <a href="#air1_popup" class="popup-open-btn" name="airplace">위치확인</a></p>
+										</div>--%>
+										<p class="input-infor pos">* <span>터미널 선택</span>에 유의하시고, 공항에 도착하시면<span> 담당자에게 연락주세요.</span></p>
 									</div>
 								</div>
 								<div class="column">
-									<div class="column-inner">
+									<div class="column-inner time">
 										<h5>수령희망날짜<em>*</em></h5>
-										<div class="column-input-box">
-
-											<c:forEach var="item" items="${dayList}" end="0">
-												<%--<input type="text" id="inputday" name="inputday" class="popup-btn" placeholder="수령 날짜를 선택해주세요.">
-												<input type="text" id="inputdayofweek" name="inputdayofweek" class="popup-btn" value="" disabled="disabled">--%>
-												<input type="text" id="inputday" name="inputday" value="<c:out value="${item.day}" />" class="popup-btn" placeholder="수령 날짜를 선택해주세요."">
-												<%--<input type="text" id="inputdayofweek" name="inputdayofweek" class="popup-btn" value="<c:out value="${item.dayoftheweek}" />" disabled="disabled">--%>
-											</c:forEach>
-											<span class="column-arrow"></span>
-											<!--calculator popup -->
-											<div class="calculator-popup data">
-												<p class="calculator-title">수령 날짜</p>
-												<ul class="place daylist">
-													<c:forEach var="item" items="${dayList}" >
-														<li>
-															<a href="#"><span class="calculator-list-txt ns-en">${item.day}</span><span class="left-text pos-right">${item.dayoftheweek}</span></a>
-														</li>
+										<div class="receive-time-wrap">
+											<div class="receive-time">
+												<div class="column-input-box">
+													<c:forEach var="item" items="${dayList}" end="0">
+														<%--<input type="text" id="inputday" name="inputday" class="popup-btn" placeholder="수령 날짜를 선택해주세요.">
+														<input type="text" id="inputdayofweek" name="inputdayofweek" class="popup-btn" value="" disabled="disabled">--%>
+														<input type="text" id="inputday" name="inputday" value="<c:out value="${item.day}" />" class="popup-btn" placeholder="수령 날짜를 선택해주세요."">
+														<%--<input type="text" id="inputdayofweek" name="inputdayofweek" class="popup-btn" value="<c:out value="${item.dayoftheweek}" />" disabled="disabled">--%>
 													</c:forEach>
-												</ul>
-											</div><!--calculator popup -->
+													<span class="column-arrow"></span>
+													<!--calculator popup -->
+													<div class="calculator-popup data">
+														<p class="calculator-title">수령희망날짜</p>
+														<ul class="place daylist">
+															<c:forEach var="item" items="${dayList}" >
+																<li>
+																	<a href="#"><span class="calculator-list-txt ns-en">${item.day}</span><span class="left-text pos-right">${item.dayoftheweek}</span></a>
+																</li>
+															</c:forEach>
+														</ul>
+													</div><!--calculator popup -->
+												</div>
+											</div>
+											<div class="receive-time">
+												<div class="column-input-box">
+													<input type="text" id="inputTime" name="inputTime" class="popup-btn" placeholder="상세 시간을 선택해주세요.">
+													<span class="column-arrow"></span>
+													<!--calculator popup -->
+													<div class="calculator-popup data">
+														<p class="calculator-title">수령 시간</p>
+														<ul class="place timelist">
+															<c:forEach var="time" items="${timeList}" >
+																<li><a href="#"><span class="calculator-list-txt ns-en">${time.time}</span></a></li>
+															</c:forEach>
+														</ul>
+													</div><!--calculator popup -->
+												</div>
+											</div>
 										</div>
-										<div class="column-input-box">
-											<input type="text" id="inputTime" name="inputTime" class="popup-btn" placeholder="상세 시간을 선택해주세요.">
-											<span class="column-arrow"></span>
-											<!--calculator popup -->
-											<div class="calculator-popup data">
-												<p class="calculator-title">수령 시간</p>
-												<ul class="place timelist">
-													<c:forEach var="time" items="${timeList}" >
-														<li><a href="#"><span class="calculator-list-txt ns-en">${time.time}</span></a></li>
-													</c:forEach>
-												</ul>
-											</div><!--calculator popup -->
-										</div>
-										<p class="input-infor">* 안전한 환전을 위하여 탑승시간 <span>최소 2시간 전 기준</span>으로 수령 시간을 설정하여 주세요.</p>
+										<p class="input-infor">* 안전한 환전을 위하여 탑승시간 <span>최소 2시간 전</span>에 연락주세요.</p>
 									</div>
 								</div>
 							</div>
@@ -728,7 +726,7 @@
 						</div>
 						<div class="result-wrap mt0 place">
 							<dl>
-								<dt>수령시간</dt>
+								<dt>수령희망날짜</dt>
 								<dd><span name="dayinfo">2018 / 07 / 01</span><br><span name="timeinfo">16:00 - 16:20</span></dd>
 							</dl>
 							<dl>
@@ -753,10 +751,10 @@
 								<dt>휴대폰 번호</dt>
 								<dd name="applicantPhoneNumber">010 - 1234 - 5678</dd>
 							</dl>
-							<dl>
+							<%--<dl>
 								<dt>이메일</dt>
 								<dd name="applicantEmail">Hanpass@gmail.com</dd>
-							</dl>
+							</dl>--%>
 						</div>
 						<p class="input-infor">
 							* 환전 신청을 완료하면 고객님 휴대폰 메시지로 <span>가상계좌입금 정보가 전송</span>됩니다.<br>
@@ -771,9 +769,9 @@
 				<!-- step4 -->
 				<div class="step-area step4">
 					<a href="javascript:void(0);">
+						<span class="step-check-ico"></span>
 						<span class="step-number ns-en">STEP 4</span>
-						<span class="step-title last">신청완료</span>
-						<span class="step-check-last-ico"></span>
+						<span class="step-title">신청완료</span>
 						<span class="step-arrow"></span>
 					</a>
 					<div class="step-area-inner step4">

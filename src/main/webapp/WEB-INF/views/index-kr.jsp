@@ -8,7 +8,7 @@
 <meta name="description" content="편리한 해외송금 서비스. 외환 전문 핀테크 기업 한패스(HANPASS)" />
 <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<link rel="icon" href="static/images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/static/images/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="static/css/base.css">
 <link rel="stylesheet" href="static/css/intro.css">
 <link rel="stylesheet" href="static/css/jquery.fullPage.css">

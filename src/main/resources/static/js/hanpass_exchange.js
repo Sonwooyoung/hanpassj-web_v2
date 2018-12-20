@@ -1,9 +1,9 @@
 //production
 //var baseUrl ='https://exchange.hanpass.com'
 //staging
-//var baseUrl ='http://testexchange.hanpass.com'
+var baseUrl ='http://testexchange.hanpass.com'
 //test
-var baseUrl ='http://localhost:8081'
+//var baseUrl ='http://localhost:8081'
 
 var placeList = new Object();
 //최소값 최대값
@@ -39,7 +39,7 @@ var settings2 = {
 }
 
 $.ajax(settings).done(function (data) {
-	console.log(data);
+	//console.log(data);
 	//수령장소 popup 초기화
 	$("#receiptPlaceInfoList").html("");
 	$("#receiptPlaceInfoList2").html("");
@@ -80,10 +80,10 @@ $.ajax(settings).done(function (data) {
 		$('#detailplaceList').append('<li idx="0"><a href="javascript:void(0);"><span class="calculator-list-txt">'+placeList.placeinfo[0][i].receiptDetailPlaceName+'</span></a></li>')
 	}
 
-	console.log(data.bankInfoList);
-	console.log(data.bankInfoList[0].nameKor);
+	//console.log(data.bankInfoList);
+	//console.log(data.bankInfoList[0].nameKor);
 	banklist = data.bankInfoList.length;
-	console.log(banklist);
+	//console.log(banklist);
 	$('.bankList').html('');
 	for(var i=1; i <banklist; i++){
 		$('.bankList').append('<li><a href="#"><span><img src="static/images/exchange/'+data.bankInfoList[i].imgSrc+'" alt=""></span><span class="calculator-list-txt" value="'+data.bankInfoList[i].bankSeq+'">'+data.bankInfoList[i].nameKor+'</span></a></li>');
@@ -93,7 +93,7 @@ $.ajax(settings).done(function (data) {
 
 $.ajax(settings2).done(function (data) {
 	$.extend(requestInfo,data);
-	console.log(requestInfo);
+	//console.log(requestInfo);
 	maxAmount = data.estimateInfo.maxAmount;
 	minAmount = data.estimateInfo.minAmount;
 	//$("#number_1").val(numberWithCommas(10000));
@@ -209,9 +209,9 @@ $(document).on('click','#receiptPlaceInfoList2 li a',function(){
 //동적생성된 상세수령장소 이벤트 처리
 $(document).on('click','#detailplaceList li a',function(){
 	var parentindex = $(this).parent().closest('li').attr('idx');
-	console.log("parentindex = "+parentindex);
+	//console.log("parentindex = "+parentindex);
 	var chiledindex = $(this).parent().closest('li').index();
-	console.log("chiledindex = "+chiledindex);
+	//console.log("chiledindex = "+chiledindex);
 	var flagName = $(this).find('>span.calculator-list-txt').text();
 	var flagName_1 = $(this).find('>span.left-text').text();
 	$('#detail_place').css('color','black');
@@ -456,7 +456,6 @@ $(document).ready(function(){
 	});
 
 	$("#exchangeRequest").on('click',function(e) {
-		console.log("@@@@@@@@@@@@@@@@@@");
 		//form 초기화
 		$('form').each(function () {
 			this.reset();
@@ -471,10 +470,9 @@ $(document).ready(function(){
 		$('.step2> a').removeClass('active');
 		$('.step3').removeClass('active');
 		$('.step3> a').removeClass('active');
-		var inputAmount = $("#number_1").val();
-		console.log(inputAmount);
-		if(inputAmount > maxAmount && inputAmount < minAmount){
-			popoup.layerAlert('alertMessage','환전 신청할 수 없는 금액');
+		var inputAmount = $("#number_2").val();
+		if(inputAmount =='0'){
+			popoup.layerAlert('alertMessage','환전 신청할 수 없는 금액입니다.');
 		}else{
 			exchangeRequest(e);
 		}
@@ -489,7 +487,7 @@ $(document).ready(function(){
 		//var telconfirm =  '인증완료';
 		switch (telconfirm) {
 			case '인증번호 받기':
-				console.log('sendsms');
+				//console.log('sendsms');
 				var reqUrl = baseUrl + '/exchange/web/v1/sendsms';
 				var telnum = $('#tel1').val();
 				if (telnum == null || telnum == "") {
@@ -507,7 +505,7 @@ $(document).ready(function(){
 					, contentType : "application/json; charset-utf-8"
 					, data : data.join('&')
 					, error : function(jqXHR, textStatus, errorThrown) {
-						console.log(errorThrown);
+						//console.log(errorThrown);
 					}
 					, success : function(data, textStatus, jqXHR){
 						if($('#telCertRequest').text() == '인증번호 받기'){
@@ -518,7 +516,7 @@ $(document).ready(function(){
 				});
 				break;
 			case '인증하기' :
-				console.log('confirmSms');
+				//console.log('confirmSms');
 				var reqUrl = baseUrl + '/exchange/web/v1/confirmSms';
 				var telnum = $('#tel1').val();
 				var telCert = $('#telCert').val();
@@ -533,7 +531,7 @@ $(document).ready(function(){
 					, contentType : "application/json; charset-utf-8"
 					, data : data.join('&')
 					, error : function(jqXHR, textStatus, errorThrown) {
-						console.log(errorThrown);
+						//console.log(errorThrown);
 					}
 					, success : function(data, textStatus, jqXHR){
 						if(data.resultCode == "0000"){
@@ -555,7 +553,7 @@ $(document).ready(function(){
 				$('#telCertRequest').text('인증완료');
 				$('#telCert').prop('disabled',true);
 				//$('#telCert').val('인증완료 되었습니다.');
-				console.log('success!!');
+				//console.log('success!!');
 				break;
 		}
 	})
@@ -571,7 +569,7 @@ $(document).ready(function(){
 		var position = 'calculator';
 		user_input_base = $(this).attr('id'); // 사용자가 데이터를 입력한 필드의 아이디 /
 		user_input_currency = $(this).siblings('div').find('.flag-btn-txt').text(); // 사용자가 데이터를 입력한 필드의 통화
-//		console.log('uuu', user_input_base, user_input_currency)
+//		//console.log('uuu', user_input_base, user_input_currency)
 		var baseMoneyAmount = $('#'.concat(user_input_base)).val(); // 사용자가 입력한 금액
 		var permitMoney = baseMoneyAmount.replace(/,/gi,'');
 		var selectedCurr = $(".flag-text-large.cal").text();
@@ -579,23 +577,23 @@ $(document).ready(function(){
 			"termCurrencyCode": selectedCurr, "termAmount": baseMoneyAmount.replace(/,/gi,'') ,"access_token" : at,
 			"maxAmount" : maxAmount, "minAmount" : minAmount
 		});
-//		console.log(data)
+//		//console.log(data)
 		calculExchange(data,position);
 	})
 
 	$('.calculator-number-box.step2 input').on('input',function() {
 		var position = 'step2';
-		//console.log('input call');
+		////console.log('input call');
 		user_input_base = $(this).attr('id'); // 사용자가 데이터를 입력한 필드의 아이디 /
 		user_input_currency = $(this).siblings('div').find('.flag-btn-txt').text(); // 사용자가 데이터를 입력한 필드의 통화
-//		console.log('uuu', user_input_base, user_input_currency)
+//		//console.log('uuu', user_input_base, user_input_currency)
 		var baseMoneyAmount = $('#'.concat(user_input_base)).val(); // 사용자가 입력한 금액
 		var selectedCurr = $(".flag-text-large.cal").text();
 		var data = JSON.stringify({
 			"termCurrencyCode": selectedCurr, "termAmount": baseMoneyAmount.replace(/,/gi,'') ,"access_token" : at,
 			"maxAmount" : maxAmount, "minAmount" : minAmount
 		});
-//		console.log(data)
+//		//console.log(data)
 		calculExchange(data,position);
 	})
 });
@@ -670,13 +668,13 @@ function calculExchange(data,position){
 		, dataType : "json"
 		, data : param.join("&")
 		, error : function(jqXHR, textStatus, errorThrown) {
-			console.log(errorThrown)
+			//console.log(errorThrown)
 		}
 		, success : function(data, textStatus, jqXHR){
 			//신청정보 추가
 			$.extend(requestInfo,data);
-			console.log(requestInfo);
-			//console.log(numberWithCommas(data.estimateInfo.baseToUsdAmount));
+			//console.log(requestInfo);
+			////console.log(numberWithCommas(data.estimateInfo.baseToUsdAmount));
 
 			minAmount = data.estimateInfo.minAmount;
 			maxAmount = data.estimateInfo.maxAmount;
@@ -754,8 +752,8 @@ function step2() {
 	var idnumber =  $('#idnumber').val();
 	var tel1 =  $('#tel1').val();
 	var telCertConfirm = $('#telCertRequest').text();
-	var emailVal = $('#email').val();
-	var regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+	//var emailVal = $('#email').val();
+	//var regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
 	var Validation = true;
 
 	if(requestName == "" || requestName == null){
@@ -766,6 +764,7 @@ function step2() {
 		$('#requestName').closest('div').removeClass("warning");
 	}
 
+	console.log(idInfo);
 	if(idInfo == "신분증 종류"){
 		$('#idInfo').closest('label').closest('div').html();
 		$('#idInfo').parent().parent().parent().closest('div').find('.warning-text').text('신분증 종류를 선택해주세요.');
@@ -779,7 +778,16 @@ function step2() {
 	if(idnumber == "" || idnumber == null){
 		$('#idInfo').parent().parent().parent().closest('div').find('.warning-text').text('신분증 번호를 입력해주세요.');
 		$('#idInfo').parent().parent().parent().closest('div').addClass('warning');
+		idnumber = idnumber.toString();
+		var idnumberDigit = idnumber.length;
+		if (idnumberDigit != 13) {
+			$('#idInfo').parent().parent().parent().closest('div').find('.warning-text').text('신분증 13자리 번호를 입력해주세요');
+			$('#idInfo').parent().parent().parent().closest('div').addClass('warning');
+			Validation = false;
 
+		}else {
+			$('#idInfo').parent().parent().parent().closest('div').removeClass('warning');
+		}
 		//$('#idnumber').focus();
 		Validation = false;
 	}else {
@@ -805,7 +813,7 @@ function step2() {
 		$('#telCert').parent().parent().parent().parent().closest('div').removeClass('warning');
 	}
 
-	if (emailVal == "" || emailVal == "null") {
+	/*if (emailVal == "" || emailVal == "null") {
 		$('#email').parent().find('.warning-text').text('이메일 을 입력해주세요.');
 		$('#email').closest('div').addClass("warning");
 		//$('#email').focus();
@@ -819,7 +827,7 @@ function step2() {
 		}else{
 			$('#email').closest('div').removeClass("warning");
 		}
-	}
+	}*/
 
 	var agreeCheck = $('#checkbox1').is(':checked');
 
@@ -842,7 +850,7 @@ function step2() {
 		applicantInfo.applicantInfo =applicantInfoList;
 		var data = applicantInfo;
 		$.extend(requestInfo,data);
-		//console.log(requestInfo);
+		////console.log(requestInfo);
 
 		$('dd[name=applicantName]').text(applicantInfoList.applicantName);
 		$('dd[name=applicantIdValue]').text(applicantInfoList.applicantIdValue);
@@ -885,10 +893,10 @@ function step3() {
 		return;
 	}
 
-	if(receiptdetailPlaceName == "" || receiptdetailPlaceName == null){
+	/*if(receiptdetailPlaceName == "" || receiptdetailPlaceName == null){
 		popoup.layerAlert('alertMessage','* 필수항목이 선택되지 않았습니다.<br>확인해주세요.');
 		return;
-	}
+	}*/
 
 	if(receiptday == "" || receiptday == null){
 		popoup.layerAlert('alertMessage','* 필수항목이 선택되지 않았습니다.<br>확인해주세요.');
@@ -927,7 +935,7 @@ function step3() {
 	promotion.promotionCode = promotioncode;
 	promotionInfo.promotionInfo = promotion;
 	$.extend(requestInfo,promotionInfo);
-	console.log(requestInfo);
+	//console.log(requestInfo);
 
 	$('.step-area-inner').hide();
 	$('.step2').addClass('active');
@@ -940,7 +948,7 @@ function step3() {
 }
 
 function step4(){
-	//console.log(requestInfo.policyInfo.estimateExpiredDate);
+	////console.log(requestInfo.policyInfo.estimateExpiredDate);
 
 	$('.step3').addClass('active');
 	$('.step3 > a').addClass('active');
@@ -956,7 +964,7 @@ function step4(){
 		, dataType : "json"
 		, data : JSON.stringify(requestInfo)
 		, error : function(jqXHR, textStatus, errorThrown) {
-			console.log(jqXHR.status);
+			//console.log(jqXHR.status);
 			if(jqXHR.status == "401"){
 				popoup.layerAlert('alertMessage','신청시간이 초과하였습니다. <br>재신청 해주시기 바랍니다.');
 				location.reload();
@@ -964,9 +972,9 @@ function step4(){
 		}
 		, success : function(data, textStatus, jqXHR){
 
-			console.log(jqXHR.status);
-			console.log(data.result);
-			console.log(data.message);
+			//console.log(jqXHR.status);
+			//console.log(data.result);
+			//console.log(data.message);
 			if(data.result == "0000"){
 				$('dd[name=confirmTermAmount]').text(numberWithCommas(data.termAmount)+" "+data.termCurrencyCode);
 				$('dd[name=confirmDepositAmount]').text(numberWithCommas(data.depositAmount)+'원');
@@ -1056,7 +1064,7 @@ function reservationInquiry(){
 	reserveinquiryObject.info = null;
 	$('.layer-popup').hide();
 	$('.mask-layer').hide();
-	console.log('reservationInquiry');
+	//console.log('reservationInquiry');
 	var reqUrl = baseUrl + '/exchange/web/v1/reservation';
 	var applicantName = $('input[name=reserveRequestName]').val();
 	var applicantPhoneNumber = $('input[name=reservePhoneNumber]').val();
@@ -1086,18 +1094,18 @@ function reservationInquiry(){
 		, contentType : "application/json; charset-utf-8"
 		, data : data.join('&')
 		, error : function(jqXHR, textStatus, errorThrown) {
-			console.log(errorThrown);
+			//console.log(errorThrown);
 			popoup.layerAlert('alertMessage','환전 정보가 존재 하지 않습니다.');
 		}
 		, success : function(data, textStatus, jqXHR){
-			console.log(data);
+			//console.log(data);
 			reserveinquiryObject.info = data;
-			console.log(reserveinquiryObject);
+			//console.log(reserveinquiryObject);
 			$('dd[name=reserveName]').text(data.applicantName);
 			$('dd[name=reservePhoneNumber]').text(data.applicantPhoneNumber);
 			$('dd[name=reserveCode]').text(data.pickupCode);
 			$('dd[name=regdate]').text(data.regDate.substring(0, data.regDate.length - 3));
-			console.log(data.termAmount);
+			//console.log(data.termAmount);
 			$('strong[name=termAmount]').text(numberWithCommas(data.termAmount)+" "+data.termCurrencyCode);
 			$('dd[name=depositAmount]').text(numberWithCommas(data.depositAmount) + " 원");
 			$('dd[name=receiptDueDate]').html('');
@@ -1136,7 +1144,7 @@ function refund_popup(){
 	$('.alert-popup').hide();
 	$('.alert_mask-layer').hide();
 	//환전신청 시퀀스
-	console.log(reserveinquiryObject.info.exchangeRequestSeq);
+	//console.log(reserveinquiryObject.info.exchangeRequestSeq);
 	$('dd[name=refundApplicantName]').text(reserveinquiryObject.info.applicantName);
 	$('dd[name=refundPhone ]').text(reserveinquiryObject.info.applicantPhoneNumber);
 	$('dd[name=refundReserveCode ]').text(reserveinquiryObject.info.reserveCode);
@@ -1165,7 +1173,7 @@ function refund_validation(){
 function refund(){
 	var refund_bankAccount = $('#bankAccount').val();
 	var reqUrl = baseUrl + '/exchange/web/v1/refund?access_token='+at;
-	console.log(reserveinquiryObject.info.exchangeRequestSeq);
+	//console.log(reserveinquiryObject.info.exchangeRequestSeq);
 	var body = new Object();
 	body.exchangeRequestSeq = reserveinquiryObject.info.exchangeRequestSeq;
 	body.accountHolderName = reserveinquiryObject.info.applicantName;
@@ -1180,7 +1188,7 @@ function refund(){
 		, contentType: "application/json; charset-utf-8"
 		, data: JSON.stringify(body)
 		, error: function (jqXHR, textStatus, errorThrown) {
-			console.log(errorThrown);
+			//console.log(errorThrown);
 		}
 		, success: function (data, textStatus, jqXHR) {
 			popoup.layerAlert('alertMessage','환불신청이 완료되었습니다.');

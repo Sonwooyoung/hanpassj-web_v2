@@ -113,9 +113,10 @@
 	</dependencies>
 
 	<build>
+		<outputDirectory>target/ROOT/WEB-INF/classes</outputDirectory>
 		<resources>
 			<resource>
-				<directory>src/mainstatic</directory>
+				<directory>src/main/resources</directory>
 			</resource>
 			<resource>
 				<directory>src/main/deployment/${deployment}</directory>

@@ -8,8 +8,7 @@
 <title>한패스</title>
 <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<link href="static/images/favicon.ico?" rel="icon" type="image/x-icon" />
-<link rel="shortcut icon" href="static/images/favicon.ico?" type="image/x-icon" />
+<link href="/static/images/favicon.ico?" rel="icon" type="image/x-icon">
 <link rel="stylesheet" href="static/css/base.css">
 <link rel="stylesheet" href="static/css/contents.css">
 <link rel="stylesheet" href="static/css/owl.carousel.min.css">

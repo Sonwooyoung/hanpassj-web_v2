@@ -242,7 +242,7 @@ public class homePageController {
 		HashMap<String,String> rateList = exchangeRateService.ExchangeRate();
 		//날짜 선택을 위한 로직 구성
 		List<Map> dayList = new DateUtil().daylists();
-
+		logger.debug("dayList = "+ dayList);
 		//시간 선택을 위한 로직 구성
 		List<Map> timeList = new DateUtil().timeLists();
 		model.addAttribute("dayList", dayList);
